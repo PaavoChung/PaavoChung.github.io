@@ -163,6 +163,29 @@ footer {
     margin: 0 5px;
 }
 
+/*项目*/
+.projest h4,.projest ul li{
+    text-align: left;
+}
+.projest h4{
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+.projest ul{
+    overflow: hidden;
+}
+.projest ul li{
+    float: left;
+    width: 50%;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+
+/*媒体查询*/
 @media screen and (max-width: 768px)  {
 	header{
 		float: none;
