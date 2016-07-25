@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+        .date{
+        	width: 100%;
+        	height: 50px;
+        	line-height: 50px;
+        	z-index: 99;
+        	text-align: center;
+        	background-color: #007ac2;
+        	color: #fff;
+    		box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    		margin-bottom: 7px;
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=BE6394ab1737e378e60f67515ba1ef7e"></script>
+    <title>数据分布图</title>
+<style type="text/css">div#pb_adbanner,div#union-qbbanner,table.EC_mr15.EC_ppim_top.ec_pp_f,div.l_banner.banner_theme_2,div.wgt-ads,div.widget-ads,div#aside_ad[class^="aside_ad_"],div.wrap2 div.novel_wrap.j_novel_wrap,DIV#ecad,DIV.ecomad-banner-loading,div.EC_im_tg,.EC_tglj,div.wgt-union,div[id^="game_couplet_pb_"],div.search_union_mod.search_ecom_mod,div.banner_wrap,div.ws-tips,div.pause-ad,div.union_mod,DIV#content_left > TABLE[data-click],#ec_im_container,DIV.banner_post.banner_post_bright.j_banner_post.clearfix,DIV.ad-block.ad-block-0,DIV[id^="html-reader-banner-"],DIV#container.container_s > DIV#content_left > TABLE,DIV#container.container_l > DIV#content_left > TABLE,DIV.r.ec_bdtg,TABLE#relEcom,DIV#relecom54,DIV#ecomContainer,DIV#imgCmsAdPart,div.sam_iebrowser_banner,DIV[id^="m"][id$="_canvas"],a.adTopImg,div.res_top_banner,.bds-top-banner,div.cbg-Ads{display:none!important;display:none}</style></head>
+<body>
+	<div class="date"><span>这是一个数据统计</span></div>
+    <div id="allmap"></div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+	// 百度地图API功能	
+	map = new BMap.Map("allmap");
+	map.centerAndZoom('银川', 5);
+	map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+	map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+	var size = new BMap.Size(10, 20);
+
+	var data_info = [[116.417854,39.921988,"地址：北京市东城区王府井大街88号乐天银泰百货八层<br>电话：110<br>人数：1500<br>时间：2016-03-03<br>业务员：paavo"],
+					 [116.406605,39.921585,"地址：北京市东城区东华门大街"],
+					 [116.412222,39.912345,"地址：北京市东城区正义路甲5号"]
+					];
+	var opts = {
+				width : 400,     // 信息窗口宽度
+				height: 150,     // 信息窗口高度
+				title : "<b>信息窗口</b>" , // 信息窗口标题
+				enableMessage:true//设置允许信息窗发送短息
+			   };
+
+
+	for(var i=0;i<data_info.length;i++){
+		var marker = new BMap.Marker(new BMap.Point(data_info[i][0],data_info[i][1]));  // 创建标注
+		var content = data_info[i][2];
+		map.addOverlay(marker);               // 将标注添加到地图中
+		addClickHandler(content,marker);
+	}
+	function addClickHandler(content,marker){
+		marker.addEventListener("click",function(e){
+			openInfo(content,e)}
+		);
+	}
+	function openInfo(content,e){
+		var p = e.target;
+		var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+		var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象 
+		map.openInfoWindow(infoWindow,point); //开启信息窗口
+	}
+
+
+
+	map.addControl(new BMap.CityListControl({
+	    anchor: BMAP_ANCHOR_TOP_LEFT,
+	    offset: size
+	    // 切换城市之间事件
+	    // onChangeBefore: function(){
+	    //    alert('before');
+	    // },
+	    // 切换城市之后事件
+	    // onChangeAfter:function(){
+	    //   alert('after');
+	    // }
+	}));
+
+
+	
+
+
+	
+
+
+
+</script>
+
+

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>点击增加删除房间</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+
+<body>
+
+<div class="site">
+	<div class="tip">
+		<div class="tip-container"><span class="jia"></span>添加房间</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+ <script type="text/javascript">
+ 	$(function () {
+        $('.tip-container').click(function () {
+            var tipcon = '<div class="tip-input">' +
+                '<input type="text" class="house-tip" placeholder="房间号">' +
+                '<span class="del"></span>' +
+                '</div>';
+            $('.tip').before(tipcon);
+            // 删除表单
+            $('.del').click(function () {
+                $(this).parent().remove();
+            });
+        });
+
+    });
+ </script>
+</body>
+</html>

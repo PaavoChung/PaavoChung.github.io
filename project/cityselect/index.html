@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>纯JS省市区联动</title>
+    <style>
+    	.cityselect{
+    		text-align: center;
+    		margin: 50px 0 0;
+    	}
+		.cityselect select{
+			display: inline-block;
+			height: 40px;
+			line-height: 40px;
+			padding: 0 2px;
+			border: 1px solid #eee;
+			border-radius: 3px;
+		}
+
+    </style>
+</head>
+<body>
+<div class="cityselect">
+<span class="province">省：<select id="cmbProvince"></select></span>
+<span class="town">市：<select id="cmbCity"></select></span>
+<span class="district">区：<select id="cmbArea"></select></span>
+<script type="text/javascript" src="jsAddress.js"></script>
+<script type="text/javascript">
+	addressInit('cmbProvince', 'cmbCity', 'cmbArea', '广东', '广州市', '天河区');
+	addressInit('Select1', 'Select2', 'Select3');
+</script>
+</div>
+</body>
+</html>

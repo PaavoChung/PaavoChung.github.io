@@ -1,0 +1,141 @@
+/* for IE7+ */
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: 'microsoft yahei';
+    background-color: #9C5C1E;
+}
+
+html, body {
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.background {
+    position: fixed;
+    _position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    width: 860px;
+    height: 310px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -155px 0 0 -430px;
+    /* IE9+ */
+    background-color: rgba(255, 255, 255, .1);
+    /* IE6-IE8 */
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#17FFFFFF, endColorStr=#17FFFFFF);
+}
+
+:root .container {
+    filter: none;
+}
+
+.inner {
+    padding: 10px 0 0 10px;
+    overflow: hidden;
+    _zoom: 1;
+}
+
+.list {
+    width: 160px;
+    height: 140px;
+    float: left;
+    margin: 0 10px 10px 0;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+}
+
+.blur {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    /* blur */
+    filter: url(../img/blur-5px.svg#blur);
+    /* css3 */
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    filter: blur(5px); /* FireFox 35+ support */
+    /* IE6~IE9 */
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5, MakeShadow=false);
+    *left: -5px;
+    left: -5px \0;
+}
+
+:root .blur {
+    left: -5px \0; /* Just IE9 */
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* IE9+ */
+    background-color: rgba(0, 0, 0, .2);
+    /* IE6-IE8 */
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#34000000, endColorStr=#34000000);
+    color: #fff;
+    font-size: 14px;
+    text-indent: 10px;
+}
+
+:root .mask {
+    filter: none;
+}
+
+/* affect */
+.list img, .list svg {
+    -webkit-transition: all .25s;
+    transition: all .25s;
+    vertical-align: bottom;
+}
+
+.list:hover .layer,
+.list:hover .blur {
+    -webkit-transform: scale(1.05) translateZ(0);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05) translateZ(0);
+    /* IE6-IE8 */
+    zoom: 1.05;
+}
+
+:root .list:hover .layer,
+:root .list:hover .blur {
+    zoom: 1;
+}
+

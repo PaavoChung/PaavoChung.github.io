@@ -1,0 +1,307 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.content > div {
+    height: 100%;
+    background: #ff675d;
+    box-sizing: border-box;
+}
+
+.circle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+}
+
+.circle li {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #00CCFF;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.circle .current {
+    width: 20px;
+    height: 20px;
+    margin-left: -3px;
+}
+
+.guodu{ transition:all 1.5s ;}
+
+.page1 {
+    position: relative;
+}
+.page1 h1 {
+    width: 247px;
+    height: 185px;
+    background: url(../img/p1.png) no-repeat -256px 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -123px;
+    margin-top: -312px;
+}
+
+.page1 h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200%;
+    margin-left: -100%;
+    text-align: center;
+    margin-top: -80px;
+}
+
+.page1 h2 span {
+    background: url(../img/p1.png) no-repeat;
+    display: inline-block;
+    transition: all 2s;
+}
+.page1.out h2 span{
+    margin: 0 50px;
+    opacity: 0;
+}
+
+
+.page1 h2 span:nth-of-type(1) {
+    width: 63px;
+    height: 83px;
+    background-position: -7px -208px;
+}
+
+.page1 h2 span:nth-of-type(2) {
+    width: 91px;
+    height: 90px;
+    background-position: -76px -205px;
+}
+
+.page1 h2 span:nth-of-type(3) {
+    width: 82px;
+    height: 85px;
+    background-position: -181px -209px;
+}
+
+.page1 h2 span:nth-of-type(4) {
+    width: 90px;
+    height: 91px;
+    background-position: -277px -204px;
+}
+
+.page1 h2 span:nth-of-type(5) {
+    width: 92px;
+    height: 90px;
+    background-position: -376px -205px;
+}
+
+.page1 h2 span:nth-of-type(6) {
+    width: 82px;
+    height: 85px;
+    background-position: -481px -209px;
+}
+
+.page1 h2 span:nth-of-type(7) {
+    width: 92px;
+    height: 90px;
+    background-position: -576px -205px;
+}
+
+.page1 h2 span:nth-of-type(8) {
+    width: 91px;
+    height: 91px;
+    background-position: -677px -204px;
+}
+
+.page1 p {
+    background: url(../img/p1.png) no-repeat 50% 100%;
+    width: 772px;
+    height: 49px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -386px;
+    margin-top: 100px;
+}
+.page1.out p{
+    transform:rotate(360deg); opacity:0;
+}
+.page2,.page3,.page4,.page5{
+    position: relative;
+}
+.page2>*, .page3>*, .page4>*, .page5>*{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.page2 span{
+    width: 428px;
+    height: 498px;
+    background: url("../img/shield.png") no-repeat;
+    display: inline-block;
+    margin-left: -600px;
+    margin-top: -240px;
+}
+.page2.out span{
+    transform:rotate(360deg);margin-left:-1500px;
+}
+.page2 p{
+    width: 635px;
+    height: 309px;
+    background: url("../img/p2.png") no-repeat;
+    display: inline-block;
+    margin-top: -160px;
+    margin-left: -80px;
+}
+.page2.out p{
+    margin-left:2000px;
+}
+
+.page3>*{
+    background: url("../img/p3.png") no-repeat;
+}
+.page3 p{
+    width: 652px;
+    height: 358px;
+    background-position: 0 -234px;
+    margin-left: -600px;
+    margin-top: -200px;
+}
+.page3.out p{
+    margin-left:-2000px;
+
+}
+
+.page3 span:nth-of-type(1){
+    width: 203px;
+    height: 203px;
+    background-position: -372px -21px;
+    margin-left: 250px;
+    margin-top: -100px;
+}
+.page3.out span:nth-of-type(1){
+    margin-left:-800px;margin-top:920px;
+}
+
+.page3 span:nth-of-type(2){
+    width: 445px;
+    height: 447px;
+    background-position: -3px -606px;
+    margin-left: 140px;
+    margin-top: -210px;
+    transition: all 2s;
+    animation: autorun01 10s linear infinite;
+}
+@keyframes autorun01 {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.page3 span:nth-of-type(3){
+    width: 381px;
+    height: 403px;
+    background-position: -474px -620px;
+    margin-left: 172px;
+    margin-top: -188px;
+    transition: all 2s;
+    animation: autorun02 10s linear infinite alternate;
+
+}
+
+@keyframes autorun02 {
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+
+.page3 span:nth-of-type(4){
+    width: 361px;
+    height: 362px;
+    background-position: -882px -642px;
+    margin-left: 182px;
+    margin-top: -168px;
+    transition: all 2s;
+    animation: autorun02 15s linear infinite;
+
+}
+.page4>*{
+    background: url("../img/p4.png")no-repeat;
+}
+.page4 span:nth-of-type(1){
+    width: 530px;
+    height: 68px;
+    background-position: 0 0;
+    margin-top: -200px;
+    margin-left: -600px;
+
+}
+
+.page4.out span:nth-of-type(1){
+    margin-left:-1000px;
+}
+
+.page4 span:nth-of-type(2){
+    width: 525px;
+    height: 370px;
+    background-position: -5px -79px;
+    margin-top: -150px;
+    margin-left: -595px;
+    transition-delay:1s;
+
+}
+.page4.out span:nth-of-type(2){
+    margin-left:-1500px;
+    opacity: 0;
+}
+.page4 p{
+    width: 611px;
+    height: 346px;
+    background-position: -566px -1px;
+    margin-top: -180px;
+    margin-left: 0;
+}
+.page4.out p{
+    margin-left:1000px;
+}
+.page5>*{
+    background: url("../img/p5.png") no-repeat;
+}
+
+.page5 p{
+    width: 1077px;
+    height: 133px;
+    background-position: 0 0;
+    margin-left: -540px;
+    margin-top: -320px;
+}
+.page5.out p{
+    transform:rotate(720deg) scale(3,3);
+    opacity:0;
+}
+.page5 span{
+    width: 1004px;
+    height: 575px;
+    background-position: -38px -160px;
+    margin-left: -502px;
+    margin-top: -244px;
+    transition-delay:1s;
+
+}
+.page5.out span{
+    transform:rotate(720deg) scale(3,3); opacity:0;
+}
