@@ -97,9 +97,30 @@ header{
 }
 .mod-list li {
     height: 28px;
-    padding-left: 22px;
+    padding-left: 18px;
     line-height: 28px;
     font-size: 16px;
+    margin-bottom: 3px;
+}
+.mod-list li a{
+    display: inline-block;
+    width: 100%;
+    padding-left:6px;
+    border-radius: 3px;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
+}
+.mod-list li a:hover{
+    border-left: 3px solid #ddddff;
+    margin-left: 10px;
+    background-color: #E4EAFF;
+    border-radius: 3px;
+    
+
 }
 
 .container.home {
