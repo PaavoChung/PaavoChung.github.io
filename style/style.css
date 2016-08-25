@@ -77,6 +77,9 @@ header{
 	float: left;
 	padding-top: 30px;
 }
+.active{
+    background-color: #E4EAFF;
+}
 .mod-head{
 	margin-bottom: 50px;
 	padding-left: 20px;
@@ -265,6 +268,7 @@ footer {
 }
 
 /*摄影*/
+
 .main {
     width: 100%;
     padding: 40px 0 100px;
@@ -462,6 +466,29 @@ figure.effect-lily:hover p {
 	footer{
 		position: static;
 	}
+
+
+    .mod-list li a{
+        display: inline-block;
+        width: 80%;
+        padding-left:0px;
+        border-radius: 3px;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -ms-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+
+    }
+    .mod-list li a:hover{
+        border-left: 0px solid #ddddff;
+        margin-left: 0px;
+        background-color: #E4EAFF;
+        border-radius: 3px;
+        
+
+    }
+
 	.container.home{
 		margin-left: 0;
 	    height: 400px;
@@ -491,6 +518,9 @@ figure.effect-lily:hover p {
 
 
 /*摄影*/
+.container.photo{
+    overflow: inherit !important ;
+}
 .main {
     width: 100%;
     padding: 15px 0 20px;
